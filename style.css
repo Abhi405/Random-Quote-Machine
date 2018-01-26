@@ -1,0 +1,46 @@
+.quote-text {
+  border: solid;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 30px;
+  padding: 30px;
+  width: 600px;
+  height: auto;
+  border-radius: 5px;
+
+
+}
+
+#text {
+  font-family: 'Kavivanar', cursive;
+}
+
+#author {
+  font-family: 'Sedgwick Ave', cursive;
+}
+
+.button {
+font-size: 40px;
+  margin-left: 320px;
+
+}
+
+.twitter:hover {
+  color: #0984e3;
+  cursor: pointer;
+}
+
+.row {
+
+  margin-top: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 20px;
+}
+
+.btn {
+  margin-left: 100px;
+ cursor: pointer;
+
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Risque" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Kavivanar" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+var quote;
+var author;
+
+getQuote();
+
+function getQuote() {
+
+ var url = "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?";
+
+  $.getJSON(url, function(data){
+
+   $("#text").html(data.quoteText);
+    $("#author").html("- "+data.quoteAuthor);
+
+    quote = data.quoteText;
+    author = data.quoteAuthor;
+
+  });
+
+
+
+};
+
+$(".btn").on("click", function(){
+
+  getQuote();
+
+
+});
+
+$(".button").on("click", function(){
+
+  window.open("https://twitter.com/intent/tweet?text="+quote+"- "+author);
+
+
+
+});
+
+
+
+});
+</script>
+
+</head>
+<body>
+
+  <div class="container text-center">
+
+  <h1 style="font-family: 'Risque', cursive;">Random Quote Machine</h1>
+
+  <div class = "quote-text">
+    <i class="fa fa-quote-left" aria-hidden="true"></i>
+    <span id="text"></span>
+      <br>
+
+     <span id="author"></span>
+    </div>
+
+  <div class="row">
+
+    <a class="button" title="Tweet this quote"><i class="fa fa-twitter-square twitter" aria-hidden="true"></i></a>
+
+
+
+  <button class="btn btn-info"><span>New Quote</span></button>
+
+    </div>
+
+
+  </div>
+
+</body>
+</html>
